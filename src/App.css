@@ -13,9 +13,16 @@
 .folder.parent {
   display: block;
 }
-.folder {
-  display: none;
+.folder,
+.file {
+  padding-left: 12px;
 }
-.folder.open {
-  display: block;
+.App > .folder {
+  display: block !important;
+}
+
+.path button {
+  margin: 2px 5px;
+  font-size: 12px;
+  cursor: pointer;
 }

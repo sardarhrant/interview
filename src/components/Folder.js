@@ -1,28 +1,33 @@
-const Folder = ({ explorer }) => {
-  const toggleFolder = (event) => {
-    const parentElement = event.nativeEvent.target;
-    const childFolders = Array.from(parentElement?.children).filter((child) =>
-      child.classList.contains("folder")
-    );
+import { useState } from "react";
 
-    childFolders.forEach((element) => {
-      element.classList.toggle("open");
-    });
+const Folder = ({ explorer, visible }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const expand = () => {
+    setIsVisible(!isVisible);
   };
 
   return (
     <div
-      className={explorer.id === "1" ? "folder parent" : "folder"}
-      onClick={toggleFolder}
-      style={{ marginTop: 5, marginLeft: 15 }}
+      className={explorer.isFolder ? "folder" : "file"}
+      style={{ display: visible ? "block" : "none" }}
     >
-      <span>
+      <span className="path" onClick={expand}>
         {explorer.isFolder ? "📁" : "📃"}
         {explorer.name}
-      </span>
 
+        {/* <button> + Add Folder</button>
+        <button> + Add file</button> */}
+      </span>
       {explorer.items.map((item) => {
-        return <Folder key={item.name} explorer={item} />;
+        return (
+          <Folder
+            key={item.name}
+            visible={isVisible}
+            element={this}
+            explorer={item}
+          />
+        );
       })}
     </div>
   );

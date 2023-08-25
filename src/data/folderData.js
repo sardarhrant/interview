@@ -14,12 +14,12 @@ const explorer = {
           isFolder: true,
           items: [
             {
-              id: "3",
+              id: "3_1",
               name: "public nested 1_1",
               isFolder: true,
               items: [
                 {
-                  id: "4",
+                  id: "3_4_1",
                   name: "index.html",
                   isFolder: false,
                   items: [],
@@ -33,13 +33,13 @@ const explorer = {
               items: [],
             },
             {
-              id: "4",
+              id: "4_1",
               name: "hello.html",
               isFolder: false,
               items: [],
             },
             {
-              id: "4",
+              id: "4_2",
               name: "about.html",
               isFolder: false,
               items: [],
